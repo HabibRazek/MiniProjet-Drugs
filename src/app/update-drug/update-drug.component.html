@@ -1,0 +1,76 @@
+<div class="container">
+  <div>
+    <h2>Modify Drugs :</h2>
+  </div>
+  <form>
+    <div hidden class="col-sm-2 col-md-2 col-lg-2">
+      <label>ID Drugs</label>
+      <input type="number" [(ngModel)]="currentDrug.id" name=" id" class="form-control" />
+    </div>
+    <div class="col-sm-4 col-md-4 col-lg-4">
+      <label>Name</label>
+      <input type="text" [(ngModel)]="currentDrug.genericName" name="genericName" class="form-control nameField" />
+    </div>
+    <div class="col-sm-2 col-md-2 col-lg-2">
+      <label>Brand</label>
+      <input type="text" [(ngModel)]="currentDrug.brandNames" name="brandNames" class="form-control" />
+    </div>
+    <div class="col-sm-2 col-md-2 col-lg-2">
+      <label>Dosage</label>
+      <input type="text" [(ngModel)]="currentDrug.dosageForm" name="dosageForm" class="form-control" />
+    </div>
+
+    <div class="col-sm-2 col-md-2 col-lg-2">
+      <label>Drug Class</label>
+      <select class="form-control form-control" id="updateidcl" name="updateidcl" [(ngModel)]="updateidcl">
+        <option *ngFor="let d of DrugClass" [value]="d.idcl">
+          {{d.name}}
+        </option>
+      </select>
+    </div>
+
+    <div class="col-sm-4 col-md-4 col-lg-4">
+      <label>Date</label>
+      <input type="date" [ngModel]="currentDrug.lastUpdated | date: 'yyyy-MM-dd'"
+        (ngModelChange)="currentDrug.lastUpdated = $event" name="dateCreation" class="form-control dateInput" />
+    </div>
+    <div class="col-sm-2 col-md-2 col-lg-2">
+      <div class="mt-2">
+        <button type="submit" (click)="updateDrug()" class="btn btn-success">
+          Modifer
+          <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="36" height="36" viewBox="0 0 36 36"
+            style="fill: #000000">
+            <path fill="#EFEFEF"
+              d="M8.114,5.564C6.309,12.241,1.61,15.891,0.74,19.109s-0.847,10.475,13.955,14.477 s19.432-4.501,20.388-8.041C39.564,8.973,11.311-6.262,8.114,5.564z">
+            </path>
+            <path fill="#F3F3F1"
+              d="M26.66,12.37l-3.02,3.03l-3.54-3.54l3.03-3.02c0.58-0.59,1.53-0.59,2.12,0l1.41,1.41 C27.25,10.84,27.25,11.79,26.66,12.37z">
+            </path>
+            <path fill="#D5DBE1"
+              d="M21.85,12.86l3.03-3.02c0.262-0.267,0.602-0.396,0.949-0.421L25.25,8.84c-0.59-0.59-1.54-0.59-2.12,0 l-3.03,3.02l3.54,3.54l0.374-0.376L21.85,12.86z">
+            </path>
+            <polygon fill="#2FDF84" points="23.64,15.4 12.88,26.16 8.25,27.25 9.34,22.62 20.1,11.86"></polygon>
+            <polygon fill="#00B871" points="11.09,23.62 21.475,13.235 20.1,11.86 9.34,22.62 8.25,27.25 10.352,26.755">
+            </polygon>
+            <rect width="2" height="1" x="13.375" y="5.842" fill="#A4AFC1"></rect>
+            <rect width="2" height="1" x="7.625" y="5.842" fill="#A4AFC1"></rect>
+            <rect width="1" height="2" x="11.125" y="2.342" fill="#A4AFC1"></rect>
+            <rect width="1" height="2" x="11.125" y="8.092" fill="#A4AFC1"></rect>
+            <g>
+              <path fill="#A4AFC1"
+                d="M5.629,32.5c-0.827,0-1.5-0.673-1.5-1.5s0.673-1.5,1.5-1.5s1.5,0.673,1.5,1.5S6.456,32.5,5.629,32.5z M5.629,30.5c-0.276,0-0.5,0.224-0.5,0.5s0.224,0.5,0.5,0.5s0.5-0.224,0.5-0.5S5.905,30.5,5.629,30.5z">
+              </path>
+            </g>
+            <g>
+              <rect width="13.5" height="1.5" x="15.75" y="26.5"></rect>
+              <path
+                d="M8.25,28c-0.197,0-0.388-0.077-0.53-0.22c-0.184-0.184-0.259-0.449-0.2-0.702l1.09-4.625 c0.032-0.136,0.101-0.26,0.2-0.358L22.599,8.306c0.848-0.849,2.332-0.851,3.182,0l1.414,1.414 c0.425,0.425,0.659,0.99,0.659,1.591c0,0.601-0.234,1.167-0.659,1.591L13.406,26.69c-0.099,0.099-0.223,0.168-0.358,0.2 l-4.625,1.09C8.365,27.994,8.307,28,8.25,28z M10.021,23.004l-0.763,3.238l3.238-0.763l13.638-13.638 c0.142-0.142,0.22-0.33,0.22-0.53s-0.078-0.389-0.22-0.53L24.72,9.366c-0.283-0.283-0.778-0.283-1.06,0L10.021,23.004z">
+              </path>
+              <rect width="1.5" height="5" x="21.121" y="11.129" transform="rotate(-45.001 21.871 13.629)"></rect>
+            </g>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
